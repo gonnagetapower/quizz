@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import {Routes, Route, BrowserRouter} from 'react-router-dom'
+import React from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
 
-import { View, ScreenSpinner, AdaptivityProvider, AppRoot, ConfigProvider, SplitLayout, SplitCol } from '@vkontakte/vkui';
+import {AdaptivityProvider, AppRoot, ConfigProvider, SplitLayout, SplitCol } from '@vkontakte/vkui';
 
 import '@vkontakte/vkui/dist/vkui.css';
 
-import Home from './panels/Home/Home.jsx';
-import About from './panels/About/About.jsx';
-import Navigation from './components/Navigation/Navigation.jsx';
+import {Navigation} from './components/';
+
+import { Home, About, TestPage } from './panels/'
+
+import './Normalize.css'
 
 const App = () => {
 	return (
@@ -15,15 +17,16 @@ const App = () => {
 			<AdaptivityProvider>
 				<AppRoot>
 					<BrowserRouter>
-					<SplitLayout>
-						<SplitCol>
-							<Routes>
-								<Route path="/" element={<Home />}/>
-								<Route path="/about" element={<About />}/>
-							</Routes>
-							<Navigation />
-						</SplitCol>
-					</SplitLayout>
+						<SplitLayout>
+							<SplitCol>
+								<Routes>
+									<Route path="/" element={<Home />} />
+									<Route path="/about" element={<About />} />
+									<Route path="/test/:id" element={<TestPage />} />
+								</Routes>
+								<Navigation />
+							</SplitCol>
+						</SplitLayout>
 					</BrowserRouter>
 				</AppRoot>
 			</AdaptivityProvider>

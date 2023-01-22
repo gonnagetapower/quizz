@@ -1,13 +1,21 @@
 .card-container {
-    height: 90px;
     width: 100%;
+    background: rgb(68, 3, 45);
+    background: linear-gradient(90deg, rgba(68, 3, 45, 0.8071603641456583) 12%, rgba(19, 119, 189, 0.8071603641456583) 48%, rgba(41, 91, 190, 0.896796218487395) 85%);
+    border-radius: 10px;
+    -webkit-box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.2);
 }
 
 .card {
-    text-align: center;
+    height: 140px;
+    cursor: pointer;
 }
 
 .card__text {
-    display: inline-block;
-    vertical-align: text-top;
+    padding: 10px;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
 }
