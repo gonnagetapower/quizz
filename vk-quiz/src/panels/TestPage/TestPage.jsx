@@ -18,11 +18,15 @@ const TestPage = () => {
     const question = questions[step];
 
     const onClickVariant = (index) => {
-        console.log(step, index)
         setStep(step + 1)
         if (index === question.correct) {
             setCorret(correct + 1)
         }
+    }
+
+    const refreshGame = () => {
+        setCorret(0);
+        setStep(0);
     }
 
     return (
@@ -37,7 +41,7 @@ const TestPage = () => {
                 {
                     step !== questions.length ?
                         <Game step={step} question={question} onClickVariant={onClickVariant} questions={questions} /> :
-                        <Result correct={correct} questions={questions} />
+                        <Result refreshGame={refreshGame} correct={correct} questions={questions} />
                 }
             </div>
         </>

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 
-import {AdaptivityProvider, AppRoot, ConfigProvider, SplitLayout, SplitCol } from '@vkontakte/vkui';
+import { AdaptivityProvider, AppRoot, ConfigProvider, SplitLayout, SplitCol, View } from '@vkontakte/vkui';
 
 import '@vkontakte/vkui/dist/vkui.css';
 
-import {Navigation} from './components/';
+import { Navigation } from './components/';
 
 import { Home, About, TestPage } from './panels/'
 
@@ -23,6 +23,7 @@ const App = () => {
 									<Route path="/" element={<Home />} />
 									<Route path="/about" element={<About />} />
 									<Route path="/test/:id" element={<TestPage />} />
+									<Route path="*" element={<Home />} />
 								</Routes>
 								<Navigation />
 							</SplitCol>
