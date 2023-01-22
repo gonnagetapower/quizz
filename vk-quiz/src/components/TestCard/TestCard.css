@@ -1,0 +1,13 @@
+.card-container {
+    height: 90px;
+    width: 100%;
+}
+
+.card {
+    text-align: center;
+}
+
+.card__text {
+    display: inline-block;
+    vertical-align: text-top;
+}
