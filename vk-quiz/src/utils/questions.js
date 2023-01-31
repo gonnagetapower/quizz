@@ -1,5 +1,4 @@
-export const questions = [
-    {
+export const questions = [{
         title: 'Год основания Древней Руси',
         variants: ['1002', '805', '882'],
         correct: 2,
