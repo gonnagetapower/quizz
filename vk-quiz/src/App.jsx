@@ -11,27 +11,30 @@ import {
   usePlatform,
   useAppearance,
   Root,
+  useAdaptivity,
 } from '@vkontakte/vkui';
 
 import '@vkontakte/vkui/dist/vkui.css';
 
 import { Navigation } from './components/';
 
-import { Home, About, Quiz } from './panels/';
+import { Home, About, Quiz, Category } from './panels/';
 
 import './Normalize.css';
-import { appRoutes, PANEL_MAIN, PANEL_QUIZ, VIEW_MAIN } from './router';
+import { appRoutes, PANEL_CATEGORY, PANEL_MAIN, PANEL_QUIZ, VIEW_MAIN } from './router';
 import { useLocation } from '@happysanta/router';
 
 const App = () => {
   const platform = usePlatform();
   const appearance = useAppearance();
   const location = useLocation();
+  const { viewWidth } = useAdaptivity();
 
   // Тема и платформа
 
   console.log('Platform', platform);
   console.log('Appearance', appearance);
+  console.log('width', viewWidth);
 
   return (
     <ConfigProvider platform={platform} appearance={appearance}>
@@ -40,17 +43,12 @@ const App = () => {
           <BrowserRouter>
             <SplitLayout>
               <SplitCol>
-                {/* <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/test/:id" element={<TestPage />} />
-                  <Route path="*" element={<Home />} />
-                </Routes> */}
                 <Root activeView={location.getViewId()}>
                   <View
                     id={VIEW_MAIN}
                     activePanel={location.getViewActivePanel(VIEW_MAIN)}>
-                    <Home id={PANEL_MAIN} />
+                    <Home id={PANEL_MAIN} platform={platform} />
+                    <Category id={PANEL_CATEGORY} />
                     <Quiz id={PANEL_QUIZ} />
                   </View>
                 </Root>

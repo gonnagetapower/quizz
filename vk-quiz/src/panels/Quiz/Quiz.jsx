@@ -1,15 +1,19 @@
 import React from 'react';
-import { PanelHeader } from '@vkontakte/vkui';
+import { PanelHeader, Panel } from '@vkontakte/vkui';
+import { PanelHeaderButton, PanelHeaderBack } from '@vkontakte/vkui';
 import { questions } from '../../utils/questions';
+
+import { Icon28ChevronBack, Icon28SettingsOutline } from '@vkontakte/icons';
 
 import { Game, Result } from '../../components';
 
 import { ReactComponent as BackArrow } from './../../assets/img/leftArrow.svg';
 
 import './Quiz.css';
+
 import { useRouter } from '@happysanta/router';
 
-const Quiz = () => {
+const Quiz = ({ id }) => {
   const router = useRouter();
 
   const [step, setStep] = React.useState(0);
@@ -29,14 +33,21 @@ const Quiz = () => {
   };
 
   return (
-    <>
-      <PanelHeader>
-        <div className="header">
-          <BackArrow onClick={() => router.popPage()} />
-          <p>Тест по истории</p>
-        </div>
+    <Panel id={id}>
+      <PanelHeader
+        left={
+          <PanelHeaderButton
+            aria-label="Back"
+            onClick={() => {
+              router.popPage();
+            }}>
+            <Icon28ChevronBack fill="black" />
+          </PanelHeaderButton>
+        }
+        before={<PanelHeaderBack color="black" />}>
+        Квиз
       </PanelHeader>
-      <div className="App">
+      <div>
         {step !== questions.length ? (
           <Game
             step={step}
@@ -48,7 +59,7 @@ const Quiz = () => {
           <Result refreshGame={refreshGame} correct={correct} questions={questions} />
         )}
       </div>
-    </>
+    </Panel>
   );
 };
 

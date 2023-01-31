@@ -1,15 +1,19 @@
 import React from 'react';
 
-import { Group, Panel, PanelHeader } from '@vkontakte/vkui';
-import { QuizCard } from '../../components';
+import { CardGrid, Group, Panel, PanelHeader } from '@vkontakte/vkui';
+import { CategoryCard, QuizCard } from '../../components';
+
+import './Home.css';
 
 const Home = ({ id }) => (
   <Panel id={id}>
-    <PanelHeader>Главная</PanelHeader>
+    <PanelHeader>Категории</PanelHeader>
     <Group mode="plain">
-      {[...new Array(6)].map((_, index) => (
-        <QuizCard key={index} id={index} />
-      ))}
+      <CardGrid size="l">
+        {[...new Array(15)].map((_, index) => (
+          <CategoryCard key={index} id={index} />
+        ))}
+      </CardGrid>
     </Group>
   </Panel>
 );

@@ -1,3 +1,6 @@
+export { default as CategoryCard }
+from "./CategoryCard/CategoryCard.jsx"
+
 export { default as Game }
 from "./Game/Game.jsx"
 

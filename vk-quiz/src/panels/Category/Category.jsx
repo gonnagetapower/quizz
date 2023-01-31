@@ -1,10 +1,20 @@
 import React from 'react';
 
+import { CardGrid, Group, Panel, PanelHeader } from '@vkontakte/vkui';
+import { CategoryCard, QuizCard } from '../../components';
+
 const Category = ({ id }) => {
   return (
-    <div>
-      <h1>Catergory {id} </h1>
-    </div>
+    <Panel id={id}>
+      <PanelHeader>Категории</PanelHeader>
+      <Group mode="plain">
+        <CardGrid size="m">
+          {[...new Array(15)].map((_, index) => (
+            <QuizCard key={index} id={index} />
+          ))}
+        </CardGrid>
+      </Group>
+    </Panel>
   );
 };
 

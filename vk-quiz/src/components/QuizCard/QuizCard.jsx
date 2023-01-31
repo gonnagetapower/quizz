@@ -1,5 +1,5 @@
 import { useRouter } from '@happysanta/router';
-import { Card, CardGrid } from '@vkontakte/vkui';
+import { Card, Tappable } from '@vkontakte/vkui';
 import React from 'react';
 import { PAGE_QUIZ } from '../../router';
 
@@ -8,17 +8,13 @@ import './QuizCard.css';
 const QuizCard = ({ id }) => {
   const router = useRouter();
   return (
-    <CardGrid size="l">
-      <Card mode="shadow">
-        <div
-          onClick={() => router.pushPage(PAGE_QUIZ, { id: id })}
-          className="card-container">
-          <div className="card">
-            <h1 className="card__text">Тест по истории</h1>
-          </div>
+    <Card mode="shadow" onClick={() => router.pushPage(PAGE_QUIZ, { id: id })}>
+      <Tappable>
+        <div className="quiz-card">
+          <h1 className="quiz-card__title">{id + 1}</h1>
         </div>
-      </Card>
-    </CardGrid>
+      </Tappable>
+    </Card>
   );
 };
 

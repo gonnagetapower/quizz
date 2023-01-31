@@ -1,21 +1,8 @@
-.card-container {
-    width: 100%;
-    background: rgb(68, 3, 45);
-    background: linear-gradient(90deg, rgba(68, 3, 45, 0.8071603641456583) 12%, rgba(19, 119, 189, 0.8071603641456583) 48%, rgba(41, 91, 190, 0.896796218487395) 85%);
-    border-radius: 10px;
-    -webkit-box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.2);
-    box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.2);
+.quiz-card {
+    height: 130px;
 }
 
-.card {
-    height: 140px;
-    cursor: pointer;
-}
-
-.card__text {
-    padding: 10px;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    color: white;
+.quiz-card__title {
+    padding-top: 25%;
+    text-align: center;
 }

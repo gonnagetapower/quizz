@@ -4,16 +4,17 @@ import { Icon24Cancel } from '@vkontakte/icons';
 
 import { Tabbar, TabbarItem } from '@vkontakte/vkui';
 import { useNavigate } from 'react-router';
+import { useRouter } from '@happysanta/router';
+import { PAGE_MAIN } from '../../router';
 
 const Navigation = () => {
-  
-   const navigate = useNavigate()
+  const router = useRouter();
 
   return (
     <div>
       <Tabbar>
         <TabbarItem
-          onClick={() => navigate('/')}
+          onClick={() => router.pushPage(PAGE_MAIN)}
           data-story="main"
           text="Главная">
           {/* <Icon24Cancel /> */}
@@ -21,8 +22,7 @@ const Navigation = () => {
         <TabbarItem
           onClick={() => navigate('/about')}
           data-story="about"
-          text="О приложении">
-        </TabbarItem>
+          text="О приложении"></TabbarItem>
       </Tabbar>
     </div>
   );
