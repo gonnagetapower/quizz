@@ -1,5 +1,5 @@
 import React from 'react';
-import { PanelHeader, Panel } from '@vkontakte/vkui';
+import { PanelHeader, Panel, Title } from '@vkontakte/vkui';
 import { PanelHeaderButton, PanelHeaderBack } from '@vkontakte/vkui';
 import { questions } from '../../utils/questions';
 
@@ -45,7 +45,7 @@ const Quiz = ({ id }) => {
           </PanelHeaderButton>
         }
         before={<PanelHeaderBack color="black" />}>
-        Квиз
+        <Title>Квиз</Title>
       </PanelHeader>
       <div>
         {step !== questions.length ? (

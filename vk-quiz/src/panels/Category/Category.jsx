@@ -1,12 +1,36 @@
 import React from 'react';
 
-import { CardGrid, Group, Panel, PanelHeader } from '@vkontakte/vkui';
-import { CategoryCard, QuizCard } from '../../components';
+import { useRouter } from '@happysanta/router';
+
+import {
+  CardGrid,
+  Group,
+  Panel,
+  PanelHeader,
+  PanelHeaderButton,
+  PanelHeaderBack,
+  Title,
+} from '@vkontakte/vkui';
+import { Icon28ChevronBack } from '@vkontakte/icons';
+import { QuizCard } from '../../components';
 
 const Category = ({ id }) => {
+  const router = useRouter();
   return (
     <Panel id={id}>
-      <PanelHeader>Категории</PanelHeader>
+      <PanelHeader
+        left={
+          <PanelHeaderButton
+            aria-label="Back"
+            onClick={() => {
+              router.popPage();
+            }}>
+            <Icon28ChevronBack fill="black" />
+          </PanelHeaderButton>
+        }
+        before={<PanelHeaderBack color="black" />}>
+        <Title>Квизы</Title>
+      </PanelHeader>
       <Group mode="plain">
         <CardGrid size="m">
           {[...new Array(15)].map((_, index) => (
