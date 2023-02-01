@@ -20,7 +20,7 @@ import { Navigation } from './components/';
 
 import { Home, About, Quiz, Category } from './panels/';
 
-import './Normalize.css';
+// import './Normalize.css';
 import './App.css';
 
 import { appRoutes, PANEL_CATEGORY, PANEL_MAIN, PANEL_QUIZ, VIEW_MAIN } from './router';
@@ -39,7 +39,7 @@ const App = () => {
   console.log('width', viewWidth);
 
   return (
-    <ConfigProvider platform={platform} appearance={appearance}>
+    <ConfigProvider isWebView={true} platform={platform} appearance={appearance}>
       <AdaptivityProvider>
         <AppRoot scroll="global">
           <SplitLayout>
@@ -47,7 +47,7 @@ const App = () => {
               <Root activeView={location.getViewId()}>
                 <View id={VIEW_MAIN} activePanel={location.getViewActivePanel(VIEW_MAIN)}>
                   <Home id={PANEL_MAIN} platform={platform} />
-                  <Category id={PANEL_CATEGORY} />
+                  <Category id={PANEL_CATEGORY} panel={PANEL_CATEGORY} />
                   <Quiz id={PANEL_QUIZ} />
                 </View>
               </Root>

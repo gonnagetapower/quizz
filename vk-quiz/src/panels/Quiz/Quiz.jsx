@@ -1,13 +1,11 @@
 import React from 'react';
-import { PanelHeader, Panel, Title } from '@vkontakte/vkui';
+import { PanelHeader, Panel, Title, usePlatform } from '@vkontakte/vkui';
 import { PanelHeaderButton, PanelHeaderBack } from '@vkontakte/vkui';
 import { questions } from '../../utils/questions';
 
-import { Icon28ChevronBack, Icon28SettingsOutline } from '@vkontakte/icons';
+import { Icon28ChevronBack } from '@vkontakte/icons';
 
 import { Game, Result } from '../../components';
-
-import { ReactComponent as BackArrow } from './../../assets/img/leftArrow.svg';
 
 import './Quiz.css';
 
@@ -45,7 +43,7 @@ const Quiz = ({ id }) => {
           </PanelHeaderButton>
         }
         before={<PanelHeaderBack color="black" />}>
-        <Title>Квиз</Title>
+        <Title>Квизы</Title>
       </PanelHeader>
       <div>
         {step !== questions.length ? (

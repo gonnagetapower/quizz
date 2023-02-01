@@ -10,7 +10,7 @@ export const PANEL_MAIN = 'panel_main';
 export const PAGE_CATEGORY = '/category/:id([0-9]+)';
 export const PANEL_CATEGORY = 'panel_category';
 
-export const PAGE_QUIZ = '/quiz/:id([0-9]+)';
+export const PAGE_QUIZ = '/category/:id([0-9]+)/quiz/:id([0-9]+)';
 export const PANEL_QUIZ = 'panel_quiz';
 
 const routes = {

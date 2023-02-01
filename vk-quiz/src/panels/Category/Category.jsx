@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-import { useRouter } from '@happysanta/router';
+import axios from 'axios';
+
+import { useParams, useRouter } from '@happysanta/router';
 
 import {
   CardGrid,
@@ -14,10 +16,36 @@ import {
 import { Icon28ChevronBack } from '@vkontakte/icons';
 import { QuizCard } from '../../components';
 
-const Category = ({ id }) => {
+const Category = ({ panel }) => {
+  const [quizes, setQuizes] = useState([]);
+
+  const { id } = useParams();
+  console.log({ id });
+
+  // useEffect(() => {
+  //   const fetchQuizes = async () => {
+  //     const data = await axios.get('/utils/categories');
+  //     setQuizes(data);
+  //   };
+  //   fetchQuizes();
+  // }, []);
+
+  useEffect(() => {
+    const fetchQuizes = async () => {
+      const response = await fetch('./data.json');
+      const responseJson = await response.json();
+      setQuizes(responseJson[id]);
+    };
+    fetchQuizes();
+  }, []);
+
+  if (!quizes) {
+    return 'Загрузка';
+  }
+
   const router = useRouter();
   return (
-    <Panel id={id}>
+    <Panel id={panel}>
       <PanelHeader
         left={
           <PanelHeaderButton
@@ -30,6 +58,7 @@ const Category = ({ id }) => {
         }
         before={<PanelHeaderBack color="black" />}>
         <Title>Квизы</Title>
+        {console.log(quizes)}
       </PanelHeader>
       <Group mode="plain">
         <CardGrid size="m">
