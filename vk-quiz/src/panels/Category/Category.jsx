@@ -12,15 +12,15 @@ import {
   PanelHeaderButton,
   PanelHeaderBack,
   Title,
+  ScreenSpinner,
 } from '@vkontakte/vkui';
 import { Icon28ChevronBack } from '@vkontakte/icons';
 import { QuizCard } from '../../components';
 
 const Category = ({ panel }) => {
+  const router = useRouter();
   const [quizes, setQuizes] = useState([]);
-
   const { id } = useParams();
-  console.log({ id });
 
   // useEffect(() => {
   //   const fetchQuizes = async () => {
@@ -36,14 +36,14 @@ const Category = ({ panel }) => {
       const responseJson = await response.json();
       setQuizes(responseJson[id]);
     };
-    fetchQuizes();
+    setTimeout(() => {
+      fetchQuizes();
+    }, 2000);
   }, []);
 
-  if (!quizes) {
-    return 'Загрузка';
+  if (quizes.length < 1) {
+    return <ScreenSpinner></ScreenSpinner>;
   }
-
-  const router = useRouter();
   return (
     <Panel id={panel}>
       <PanelHeader
@@ -58,7 +58,6 @@ const Category = ({ panel }) => {
         }
         before={<PanelHeaderBack color="black" />}>
         <Title>Квизы</Title>
-        {console.log(quizes)}
       </PanelHeader>
       <Group mode="plain">
         <CardGrid size="m">
