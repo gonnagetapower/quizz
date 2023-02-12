@@ -1,7 +1,21 @@
 .category-card {
-    padding: 10px;
+    height: 120px;
     display: flex;
+    gap: 10px;
     align-items: center;
+    position: relative;
+    border-radius: 8px;
+}
+
+.flare {
+    position: absolute;
+    top: 10px;
+    left: 90px;
+    width: 80%;
+    height: 85%;
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.089), 70%, rgba(0, 0, 0, 0.0));
+    border-radius: 50px 50px 0px 15px; 
 }
 
 .img-wrapper {
@@ -11,6 +25,10 @@
     padding-right: 25px;
 }
 
+.category-text {
+    color: #fff;
+}
+
 .category-card__title {
     padding: 0;
     margin: 0;
@@ -18,4 +36,6 @@
 }
 
 .category-card__descr {
+    margin: 0;
+    padding: 0;
 }

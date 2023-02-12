@@ -5,12 +5,13 @@ import { PAGE_CATEGORY } from '../../router';
 
 import './CategoryCard.css';
 
-const CategoryCard = ({ id, category, img, descr }) => {
+const CategoryCard = ({ id, category, img, descr, background }) => {
   const router = useRouter();
   return (
     <Card mode="shadow" onClick={() => router.pushPage(PAGE_CATEGORY, { id: id })}>
       <Tappable>
-        <div className="category-card">
+        <div className="category-card" style={{background: background}}>
+        <div class="flare"></div>
           <div className='img-wrapper'>
             <img src={img} />
           </div>
