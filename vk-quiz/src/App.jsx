@@ -70,26 +70,11 @@ const App = () => {
       });
   }, []);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const response = await fetch('./data.json');
-  //     const responseJson = await response.json();
-  //     setData(responseJson);
-  //   };
-  //   setTimeout(() => {
-  //     fetchData();
-  //   }, 3000);
-  // }, []);
-
   console.log(data);
 
   console.log('Platform', platform);
   console.log('Appearance', appearance);
   console.log('width', viewWidth);
-
-  // if (!data) {
-  //   return <ScreenSpinner></ScreenSpinner>;
-  // }
 
   const modal = (
     <ModalRoot activeModal={location.getModalId()} onClose={() => router.popPage()}>

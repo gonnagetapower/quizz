@@ -34,7 +34,7 @@ const Home = ({ id }) => {
             <CategoryCard key={index} id={index} />
           ))} */}
           {categories.map((category, index) => (
-            <CategoryCard id={index} category={category.category} />
+            <CategoryCard id={index} category={category.category}  img={category.img} descr={category.descr}/>
           ))}
         </CardGrid>
       </Group>

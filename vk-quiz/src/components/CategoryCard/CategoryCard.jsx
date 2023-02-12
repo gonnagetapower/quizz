@@ -5,18 +5,21 @@ import { PAGE_CATEGORY } from '../../router';
 
 import './CategoryCard.css';
 
-const CategoryCard = ({ id, category }) => {
+const CategoryCard = ({ id, category, img, descr }) => {
   const router = useRouter();
   return (
     <Card mode="shadow" onClick={() => router.pushPage(PAGE_CATEGORY, { id: id })}>
       <Tappable>
         <div className="category-card">
-          <h1 className="category-card__title">{category}</h1>
-          <p className="category-card__descr">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, animi. Hic
-            magnam assumenda harum vitae neque perspiciatis dolorem eos modi fuga impedit
-            qui delectus consequatur vel, facilis ex ipsum? Nulla?
-          </p>
+          <div className='img-wrapper'>
+            <img src={img} />
+          </div>
+          <div className='category-text'>
+            <h1 className="category-card__title">{category}</h1>
+            <p className="category-card__descr">
+              {descr}
+            </p>
+          </div>
         </div>
       </Tappable>
     </Card>

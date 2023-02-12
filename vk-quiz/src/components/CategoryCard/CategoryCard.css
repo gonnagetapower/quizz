@@ -1,25 +1,21 @@
 .category-card {
-    padding-left: 15%;
+    padding: 10px;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    height: 140px;
-    border-radius: 10px;
+    align-items: center;
+}
+
+.img-wrapper {
+    width: 48px;
+    height: 48px;
+    padding-left: 20px;
+    padding-right: 25px;
 }
 
 .category-card__title {
+    padding: 0;
+    margin: 0;
     font-size: 22px;
 }
 
 .category-card__descr {
-    padding-right: 20%;
-    display: -webkit-box;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    color: #686868;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
