@@ -1,5 +1,5 @@
 .category-card {
-    height: 120px;
+    height: 130px;
     display: flex;
     gap: 10px;
     align-items: center;
@@ -10,12 +10,13 @@
 .flare {
     position: absolute;
     top: 10px;
-    left: 90px;
+    left: 85px;
     width: 80%;
     height: 85%;
     /* background-color: rgba(0, 0, 0, 0.2); */
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.089), 70%, rgba(0, 0, 0, 0.0));
-    border-radius: 50px 50px 0px 15px; 
+    background: linear-gradient(to right, rgba(29, 29, 29, 0.096), 80%, rgba(0, 0, 0, 0));
+    clip-path: polygon(0 18%, 100% 0, 100% 100%, 0 80%);
+    border-radius: 150px 0px 0px 20px; 
 }
 
 .img-wrapper {
