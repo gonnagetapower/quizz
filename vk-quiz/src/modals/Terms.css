@@ -1,0 +1,72 @@
+.button--off {
+    width: 230px;
+    height: 42px;
+    left: 65px;
+    top: 670px;
+    background: rgb(148, 146, 146);
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: #F3F3F3;
+}
+
+.modal-container {
+    padding: 35px;
+}
+
+.modal {
+    max-height: 470px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 35px;
+    padding-right: 5px;
+}
+
+.modal__title {
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    color: #232036;
+}
+
+.modal__descr {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: #686868;
+}
+
+.modal__descr-title {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #E7E7E7;
+}
+
+.modal__checkbox {
+    margin-bottom: 28px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    color: #686868;
+}
+
+.policy--label {
+    padding-left: 14px;
+}
+
+.modal__button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+}

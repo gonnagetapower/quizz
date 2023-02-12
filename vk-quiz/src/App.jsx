@@ -1,5 +1,6 @@
-import React from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+
+import bridge from '@vkontakte/vk-bridge';
 
 import {
   AdaptivityProvider,
@@ -12,6 +13,8 @@ import {
   useAppearance,
   Root,
   useAdaptivity,
+  ScreenSpinner,
+  ModalRoot,
 } from '@vkontakte/vkui';
 
 import '@vkontakte/vkui/dist/vkui.css';
@@ -23,8 +26,18 @@ import { Home, About, Quiz, Category } from './panels/';
 // import './Normalize.css';
 import './App.css';
 
-import { appRoutes, PANEL_CATEGORY, PANEL_MAIN, PANEL_QUIZ, VIEW_MAIN } from './router';
-import { useLocation } from '@happysanta/router';
+import {
+  appRoutes,
+  MODAL_TERMS,
+  PANEL_CATEGORY,
+  PANEL_MAIN,
+  PANEL_QUIZ,
+  PANEL_WELCOME,
+  VIEW_MAIN,
+} from './router';
+import { useLocation, useRouter } from '@happysanta/router';
+import Welcome from './panels/Welcome/Welcome';
+import Terms from './modals/Terms';
 
 const App = () => {
   const platform = usePlatform();
@@ -32,26 +45,71 @@ const App = () => {
   const location = useLocation();
   const { viewWidth } = useAdaptivity();
 
+  const [data, setData] = useState('');
+
+  const [popout, setPopout] = useState(null);
+
+  const router = useRouter();
+
   // Тема и платформа
+
+  useEffect(() => {
+    bridge
+      .send('VKWebAppInit')
+      .then((res) => {
+        if (res.result) {
+          console.log('Success', res);
+        } else {
+          console.log('Eroor');
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const response = await fetch('./data.json');
+  //     const responseJson = await response.json();
+  //     setData(responseJson);
+  //   };
+  //   setTimeout(() => {
+  //     fetchData();
+  //   }, 3000);
+  // }, []);
+
+  console.log(data);
 
   console.log('Platform', platform);
   console.log('Appearance', appearance);
   console.log('width', viewWidth);
 
+  // if (!data) {
+  //   return <ScreenSpinner></ScreenSpinner>;
+  // }
+
+  const modal = (
+    <ModalRoot activeModal={location.getModalId()} onClose={() => router.popPage()}>
+      <Terms id={MODAL_TERMS} />
+    </ModalRoot>
+  );
+
   return (
-    <ConfigProvider isWebView={true} platform={platform} appearance={appearance}>
+    <ConfigProvider>
       <AdaptivityProvider>
         <AppRoot scroll="global">
-          <SplitLayout>
+          <SplitLayout popout={popout} modal={modal}>
             <SplitCol>
-              <Root activeView={location.getViewId()}>
-                <View id={VIEW_MAIN} activePanel={location.getViewActivePanel(VIEW_MAIN)}>
-                  <Home id={PANEL_MAIN} platform={platform} />
-                  <Category id={PANEL_CATEGORY} panel={PANEL_CATEGORY} />
-                  <Quiz id={PANEL_QUIZ} />
-                </View>
-              </Root>
-              <Navigation />
+              <View
+                id={VIEW_MAIN}
+                activePanel={location.getViewActivePanel(VIEW_MAIN)}
+                data={data}>
+                <Welcome id={PANEL_WELCOME} />
+                <Home id={PANEL_MAIN} platform={platform} data={data} />
+                <Category id={PANEL_CATEGORY} panel={PANEL_CATEGORY} data={data} />
+                <Quiz id={PANEL_QUIZ} />
+              </View>
             </SplitCol>
           </SplitLayout>
         </AppRoot>

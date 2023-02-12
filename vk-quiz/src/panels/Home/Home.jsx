@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { CardGrid, Group, Panel, PanelHeader } from '@vkontakte/vkui';
-import { CategoryCard, QuizCard } from '../../components';
+import { CategoryCard, Navigation, QuizCard } from '../../components';
 
 import './Home.css';
 
@@ -15,6 +15,7 @@ const Home = ({ id }) => (
         ))}
       </CardGrid>
     </Group>
+    <Navigation />
   </Panel>
 );
 
