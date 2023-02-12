@@ -46,11 +46,11 @@ const Category = ({ panel }) => {
             onClick={() => {
               router.popPage();
             }}>
-            <Icon28ChevronBack fill="black" />
+            <Icon28ChevronBack fill="#fff" />
           </PanelHeaderButton>
         }
-        before={<PanelHeaderBack color="black" />}>
-        <Title>Категория : {quizes.category}</Title>
+        before={<PanelHeaderBack color="#fff" />}>
+        <Title style={{color: "#fff"}}>Категория : {quizes.category}</Title>
       </PanelHeader>
       <Group mode="plain">
         <CardGrid size="m">

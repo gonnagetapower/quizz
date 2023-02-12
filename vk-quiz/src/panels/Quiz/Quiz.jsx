@@ -39,14 +39,13 @@ const Quiz = ({ id }) => {
             onClick={() => {
               router.popPage();
             }}>
-            <Icon28ChevronBack fill="black" />
+            <Icon28ChevronBack fill="#fff" />
           </PanelHeaderButton>
         }
-        before={<PanelHeaderBack color="black" />}>
-        <Title>Квизы</Title>
+        before={<PanelHeaderBack color="#fff" />}>
+        <Title style={{color : "#fff"}}>Квизы</Title>
       </PanelHeader>
-      <div>
-        <Group>
+      <div className='quiz'>
           {step !== questions.length ? (
             <Game
               step={step}
@@ -57,7 +56,6 @@ const Quiz = ({ id }) => {
           ) : (
             <Result refreshGame={refreshGame} correct={correct} questions={questions} />
           )}
-        </Group>
       </div>
     </Panel>
   );

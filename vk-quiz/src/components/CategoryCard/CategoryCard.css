@@ -1,5 +1,5 @@
 .category-card {
-    height: 130px;
+    height: 160px;
     display: flex;
     gap: 10px;
     align-items: center;
@@ -39,4 +39,5 @@
 .category-card__descr {
     margin: 0;
     padding: 0;
+    padding-right: 15px;
 }

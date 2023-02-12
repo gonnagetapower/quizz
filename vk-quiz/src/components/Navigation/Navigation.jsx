@@ -7,11 +7,13 @@ import { useNavigate } from 'react-router';
 import { useRouter } from '@happysanta/router';
 import { PAGE_MAIN } from '../../router';
 
+import './Navigation.css'
+
 const Navigation = () => {
   const router = useRouter();
 
   return (
-    <div>
+    <div className='navigation'>
       <Tabbar>
         <TabbarItem
           onClick={() => router.pushPage(PAGE_MAIN)}

@@ -27,7 +27,10 @@ const Home = ({ id }) => {
 
 	return (
 		<Panel id={id}>
-			<PanelHeader>Категории</PanelHeader>
+			<PanelHeader >
+				<div style={{color: "#fff"}}>
+					Категории
+				</div></PanelHeader>
 			<Group mode="plain">
 				<CardGrid size="l">
 					{categories.map((category, index) => (

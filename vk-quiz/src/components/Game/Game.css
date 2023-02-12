@@ -2,9 +2,12 @@
     padding-top: 15px;
     padding-left: 12px;
     padding-right: 12px;
+    color: #fff;
 }
 
 .progress {
+    margin: 0 auto;
+    width: 80%;
     height: 10px;
     border-radius: 30px;
     background-color: #e8e8e8;
@@ -17,7 +20,7 @@
     width: 80%;
     background: #12a4e7;
     transition: all 0.3s ease-in-out;
-    background: linear-gradient(90deg, rgb(18, 164, 231) 0%, rgba(0, 212, 255, 1) 100%);
+    background: linear-gradient(90deg, rgb(231, 18, 231) 0%, rgb(255, 238, 0) 100%);
 }
 
 .game__title {
@@ -38,7 +41,7 @@
     list-style-type: none;
     font-family: 'Montserrat', sans-serif;
     padding: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.479);
     border-radius: 15px;
     margin-bottom: 10px;
     cursor: pointer;
@@ -46,5 +49,5 @@
 }
 
 .game__question:hover {
-    border: 2px solid rgba(27, 140, 192, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.884);
 }

@@ -87,19 +87,21 @@ const App = () => {
     <ConfigProvider>
       <AdaptivityProvider>
         <AppRoot scroll="global">
-          <SplitLayout popout={popout} modal={modal}>
-            <SplitCol>
-              <View
-                id={VIEW_MAIN}
-                activePanel={location.getViewActivePanel(VIEW_MAIN)}
-                data={data}>
-                <Welcome id={PANEL_WELCOME} />
-                <Home id={PANEL_MAIN} platform={platform} data={data} />
-                <Category id={PANEL_CATEGORY} panel={PANEL_CATEGORY} data={data} />
-                <Quiz id={PANEL_QUIZ} />
-              </View>
-            </SplitCol>
-          </SplitLayout>
+        <div className='app'>
+            <SplitLayout popout={popout} modal={modal}>
+              <SplitCol>
+                <View
+                  id={VIEW_MAIN}
+                  activePanel={location.getViewActivePanel(VIEW_MAIN)}
+                  data={data}>
+                  <Welcome id={PANEL_WELCOME} />
+                  <Home id={PANEL_MAIN} platform={platform} data={data} />
+                  <Category id={PANEL_CATEGORY} panel={PANEL_CATEGORY} data={data} />
+                  <Quiz id={PANEL_QUIZ} />
+                </View>
+              </SplitCol>
+            </SplitLayout>
+            </div>
         </AppRoot>
       </AdaptivityProvider>
     </ConfigProvider>
