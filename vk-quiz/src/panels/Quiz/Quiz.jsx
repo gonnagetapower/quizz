@@ -1,5 +1,5 @@
 import React from 'react';
-import { PanelHeader, Panel, Title, usePlatform } from '@vkontakte/vkui';
+import { PanelHeader, Panel, Title, usePlatform, Group } from '@vkontakte/vkui';
 import { PanelHeaderButton, PanelHeaderBack } from '@vkontakte/vkui';
 import { questions } from '../../utils/questions';
 
@@ -46,16 +46,18 @@ const Quiz = ({ id }) => {
         <Title>Квизы</Title>
       </PanelHeader>
       <div>
-        {step !== questions.length ? (
-          <Game
-            step={step}
-            question={question}
-            onClickVariant={onClickVariant}
-            questions={questions}
-          />
-        ) : (
-          <Result refreshGame={refreshGame} correct={correct} questions={questions} />
-        )}
+        <Group>
+          {step !== questions.length ? (
+            <Game
+              step={step}
+              question={question}
+              onClickVariant={onClickVariant}
+              questions={questions}
+            />
+          ) : (
+            <Result refreshGame={refreshGame} correct={correct} questions={questions} />
+          )}
+        </Group>
       </div>
     </Panel>
   );

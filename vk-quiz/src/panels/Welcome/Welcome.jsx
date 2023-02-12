@@ -16,23 +16,25 @@ const Welcome = ({ id }) => {
 
   return (
     <Panel id={id}>
-      <div class="splash">
-        <div class="splash_logo">Квизы</div>
-        <div class="splash_svg">
-          <svg width="100%" height="100%">
-            <rect width="100%" height="100%" />
-          </svg>
+      <div className="welcome-container">
+        <div class="splash">
+          <div class="splash_logo">Квизы</div>
+          <div class="splash_svg">
+            <svg width="100%" height="100%">
+              <rect width="100%" height="100%" />
+            </svg>
+          </div>
+          <div class="splash_minimize">
+            <svg width="100%" height="100%">
+              <rect width="100%" height="100%" />
+            </svg>
+          </div>
         </div>
-        <div class="splash_minimize">
-          <svg width="100%" height="100%">
-            <rect width="100%" height="100%" />
-          </svg>
+        <div class="text">
+          <p>Проверь</p>
+          <p>свои знания</p>
+          <button onClick={() => router.pushModal(MODAL_TERMS)}>Войти</button>
         </div>
-      </div>
-      <div class="text">
-        <p>Проверь</p>
-        <p>свои знания</p>
-        <button onClick={() => router.pushModal(MODAL_TERMS)}>Войти</button>
       </div>
     </Panel>
   );

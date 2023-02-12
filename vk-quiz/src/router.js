@@ -19,6 +19,7 @@ export const PANEL_QUIZ = 'panel_quiz';
 //modals
 
 export const MODAL_TERMS = 'modal_terms';
+export const MODAL_UNAVAILABLE = 'modal_unavailable';
 
 const routes = {
   [PAGE_WELCOME]: new Page(PANEL_WELCOME, VIEW_MAIN),

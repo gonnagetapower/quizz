@@ -20,15 +20,8 @@ import { QuizCard } from '../../components';
 const Category = ({ panel }) => {
   const router = useRouter();
   const [quizes, setQuizes] = useState([]);
-  const { id } = useParams();
 
-  // useEffect(() => {
-  //   const fetchQuizes = async () => {
-  //     const data = await axios.get('/utils/categories');
-  //     setQuizes(data);
-  //   };
-  //   fetchQuizes();
-  // }, []);
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchQuizes = async () => {
@@ -57,13 +50,21 @@ const Category = ({ panel }) => {
           </PanelHeaderButton>
         }
         before={<PanelHeaderBack color="black" />}>
-        <Title>Квизы</Title>
+        <Title>Категория : {quizes.category}</Title>
       </PanelHeader>
       <Group mode="plain">
         <CardGrid size="m">
-          {[...new Array(15)].map((_, index) => (
-            <QuizCard key={index} id={index} />
-          ))}
+          {!quizes.quizes ? (
+            <>
+              <h1>Квизов еще не придумано</h1>
+            </>
+          ) : (
+            <>
+              {quizes.quizes.map((quiz, index) => (
+                <QuizCard key={index} id={index} quiz={quiz[index + 1]} />
+              ))}
+            </>
+          )}
         </CardGrid>
       </Group>
     </Panel>

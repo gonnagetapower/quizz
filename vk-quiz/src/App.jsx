@@ -28,6 +28,7 @@ import './App.css';
 
 import {
   appRoutes,
+  MODAL_UNAVAILABLE,
   MODAL_TERMS,
   PANEL_CATEGORY,
   PANEL_MAIN,
@@ -38,6 +39,7 @@ import {
 import { useLocation, useRouter } from '@happysanta/router';
 import Welcome from './panels/Welcome/Welcome';
 import Terms from './modals/Terms';
+import Unavailable from './modals/Unavailable/Unavailable';
 
 const App = () => {
   const platform = usePlatform();
@@ -92,6 +94,7 @@ const App = () => {
   const modal = (
     <ModalRoot activeModal={location.getModalId()} onClose={() => router.popPage()}>
       <Terms id={MODAL_TERMS} />
+      <Unavailable id={MODAL_UNAVAILABLE} content="" />
     </ModalRoot>
   );
 

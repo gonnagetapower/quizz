@@ -11,3 +11,15 @@
     margin-right: -50%;
     transform: translate(-50%, -50%)
 }
+
+.quiz-card--blocked {
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-image: url('./../../assets/img/icons8-lock.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.quiz-card__title--blocked {
+    display: none;
+}
