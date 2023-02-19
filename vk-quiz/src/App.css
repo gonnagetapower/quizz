@@ -9,7 +9,7 @@
 
 .app {
     background-color: #4158D0;
-    background-image: linear-gradient(to right, rgb(248, 87, 166), rgb(255, 88, 88));    
+    background-image: linear-gradient(to right, rgb(75, 108, 183), rgb(24, 40, 72));    
     height: 100%;
     overflow: auto;
 }

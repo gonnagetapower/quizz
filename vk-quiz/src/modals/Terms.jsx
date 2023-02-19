@@ -4,6 +4,7 @@ import { useRouter } from '@happysanta/router';
 import { PAGE_MAIN } from './../router';
 
 import './Terms.css';
+import { Button } from '../components';
 
 const Terms = ({ id }) => {
   const router = useRouter();
@@ -68,11 +69,9 @@ const Terms = ({ id }) => {
               понимаю объективно ситуацию где связь противоречит экономической ситуации
             </p>
           </div>
-          <button
-            className={'button modal__button'}
-            onClick={() => router.pushPage(PAGE_MAIN)}>
-            Понятно
-          </button>
+          <Button
+            handleClick={() => router.pushPage(PAGE_MAIN)}
+            title="Принять правила"/>
         </div>
       </div>
     </ModalPage>

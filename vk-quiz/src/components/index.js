@@ -1,3 +1,6 @@
+export { default as Button}
+from './Button/Button.jsx'
+
 export { default as CategoryCard }
 from "./CategoryCard/CategoryCard.jsx"
 

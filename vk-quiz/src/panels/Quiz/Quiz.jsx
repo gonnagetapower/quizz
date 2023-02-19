@@ -43,20 +43,21 @@ const Quiz = ({ id }) => {
           </PanelHeaderButton>
         }
         before={<PanelHeaderBack color="#fff" />}>
-        <Title style={{color : "#fff"}}>Квизы</Title>
+        <Title style={{ color: "#fff" }}>Квизы</Title>
       </PanelHeader>
-      <div className='quiz'>
-          {step !== questions.length ? (
-            <Game
-              step={step}
-              question={question}
-              onClickVariant={onClickVariant}
-              questions={questions}
-            />
-          ) : (
-            <Result refreshGame={refreshGame} correct={correct} questions={questions} />
-          )}
-      </div>
+
+      {step !== questions.length ? (
+        <div className='quiz'>
+          <Game
+            step={step}
+            question={question}
+            onClickVariant={onClickVariant}
+            questions={questions}
+          />
+        </div>
+      ) : (
+        <Result refreshGame={refreshGame} correct={correct} questions={questions} />
+      )}
     </Panel>
   );
 };

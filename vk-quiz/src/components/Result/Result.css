@@ -1,4 +1,8 @@
 .result {
+    border: 1px solid #fff;
+    padding: 15px;
+    margin-right: 15px;
+    margin-left: 15px;
     color: #fff;
     display: flex;
     justify-content: center;
