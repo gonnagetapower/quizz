@@ -5,15 +5,15 @@
     align-items: center;
     position: relative;
     border-radius: 8px;
+    padding-right: 15px;
 }
 
 .flare {
     position: absolute;
     top: 10px;
-    left: 85px;
+    left: 15px;
     width: 80%;
     height: 85%;
-    /* background-color: rgba(0, 0, 0, 0.2); */
     background: linear-gradient(to right, rgba(29, 29, 29, 0.096), 80%, rgba(0, 0, 0, 0));
     clip-path: polygon(0 18%, 100% 0, 100% 100%, 0 80%);
     border-radius: 150px 0px 0px 20px; 
@@ -31,9 +31,12 @@
 }
 
 .category-card__title {
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-size: 22px;
+    font-weight: 600;
+    border-bottom: 1px solid #fff;
 }
 
 .category-card__descr {

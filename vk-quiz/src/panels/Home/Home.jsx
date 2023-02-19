@@ -38,7 +38,7 @@ const Home = ({ id }) => {
 					))}
 				</CardGrid>
 			</Group>
-			<Navigation />
+			{/* <Navigation /> */}
 		</Panel>
 	);
 };
