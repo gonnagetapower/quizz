@@ -2,7 +2,7 @@
         "id": 1,
         "category": "Спорт",
         "img": "./categoryIcon/sport.png",
-        "background": "linear-gradient(to right, #fc466b, #3f5efb)",
+        "background": "linear-gradient(to right, rgb(116, 116, 191), rgb(52, 138, 199))",
         "descr": "Проверьте насколько вы сильны в спорте!",
         "quizes": [{
                 "1": {
@@ -62,7 +62,7 @@
     },
     {
         "id": 2,
-        "background": "linear-gradient(-15deg, #f321d7, #ffec61)",
+        "background": "linear-gradient(to right, rgb(97, 67, 133), rgb(81, 99, 149))",
         "descr": "Остались ли у вас знания со школы и института? Зайди и проверь!",
         "img": "./categoryIcon/science.png",
         "category": "Наука",
@@ -124,7 +124,7 @@
     },
     {
         "id": 3,
-        "background": "linear-gradient(to right, rgb(254, 172, 94), rgb(199, 121, 208), rgb(75, 192, 200)",
+        "background": "linear-gradient(to right, rgb(19, 78, 94), rgb(113, 178, 128))",
         "descr": "Пройдя данные тесты вы сможете проверить свои знания по истории. Вам будут заданы вопросы из различных разделов и периодов истории.",
         "img": "./categoryIcon/history.png",
         "category": "История",
@@ -186,7 +186,7 @@
     },
     {
         "id": 4,
-        "background": "linear-gradient(-45deg, #ffec61, #f321d7)",
+        "background": "linear-gradient(to right, rgb(8, 80, 120), rgb(133, 216, 206))",
         "descr": "Простой и удобный способ лучше разобраться в себе, понять, что Вы из себя представляете, как поведете себя в определенных ситуациях.",
         "img": "./categoryIcon/psyhology.png",
         "category": "Психология",
