@@ -1,18 +1,16 @@
 .quiz-card {
-    height: 160px;
+    height: 120px;
     position: relative;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 15px;
+    color: #fff;
 }
 
 .quiz-card__title {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
 }
 
-.quiz-card--blocked {
+/* .quiz-card--blocked {
     border-radius: 8px;
     background-color: rgba(0, 0, 0, 0.2);
     background-image: url('./../../assets/img/icons8-lock.svg');
@@ -22,4 +20,4 @@
 
 .quiz-card__title--blocked {
     display: none;
-}
+} */

@@ -17,6 +17,8 @@ import {
 import { Icon28ChevronBack } from '@vkontakte/icons';
 import { QuizCard } from '../../components';
 
+import './Category.css'
+
 const Category = ({ panel }) => {
   const router = useRouter();
   const [quizes, setQuizes] = useState([]);
@@ -50,10 +52,10 @@ const Category = ({ panel }) => {
           </PanelHeaderButton>
         }
         before={<PanelHeaderBack color="#fff" />}>
-        <Title style={{color: "#fff"}}>Категория : {quizes.category}</Title>
+        <Title style={{ color: "#fff" }}>Категория : {quizes.category}</Title>
       </PanelHeader>
-      <Group mode="plain">
-        <CardGrid size="m">
+      <div className='quiz-container'>
+        <Group mode="plain">
           {!quizes.quizes ? (
             <>
               <h1>Квизов еще не придумано</h1>
@@ -61,12 +63,12 @@ const Category = ({ panel }) => {
           ) : (
             <>
               {quizes.quizes.map((quiz, index) => (
-                <QuizCard key={index} id={index} quiz={quiz[index + 1]} />
+                <QuizCard bg={quizes.background} key={index} id={index} quiz={quiz[index + 1]} />
               ))}
             </>
           )}
-        </CardGrid>
-      </Group>
+        </Group>
+      </div>
     </Panel>
   );
 };
