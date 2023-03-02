@@ -6,9 +6,13 @@ const Game = ({ step, question, onClickVariant, questions }) => {
   const percentage = Math.round((step / questions.length) * 100);
   return (
     <div className="game">
-      <div className="progress">
-        <div style={{ width: `${percentage}%` }} className="progress__inner"></div>
+      {/* <div className="progress"> */}
+      {/* <div style={{ width: `${percentage}%` }} className="progress__inner"></div> */}
+      {/* </div> */}
+      <div className='step-container'>
+        <h2 className='step'>{step} / {questions.length}</h2>
       </div>
+
       <h1 className="game__title">{question.title}</h1>
       <ul className="game-list">
         {question.variants.map((text, index) => (

@@ -7,6 +7,8 @@ export const appSlice = createSlice({
         games: '',
     },
     reducers: {
-        
+
     }
 })
+
+export default appSlice.reducer

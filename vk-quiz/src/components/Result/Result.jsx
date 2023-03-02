@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "./../../components/";
 import bridge from '@vkontakte/vk-bridge'
 import './Result.css'
+import { PAGE_CATEGORY, router } from "../../router";
 
 const Result = ({ correct, questions, refreshGame }) => {
 
@@ -45,7 +46,10 @@ const Result = ({ correct, questions, refreshGame }) => {
                 <>
                 </>
             )}
-            <Button handleClick={fooButtonClick} title={'Узнать результат'} />
+            <div className="btn-container">
+                <Button handleClick={fooButtonClick} title={'Узнать результат'} />
+                <Button handleClick={() => router.popPage()} title={'Вернуться к квизам'} />
+            </div>
         </div>
     );
 }
