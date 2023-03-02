@@ -2,22 +2,11 @@
     height: 120px;
     position: relative;
     margin-bottom: 10px;
-    border-radius: 6px;
+    border-radius: 25px;
     padding: 15px;
     color: #fff;
 }
 
 .quiz-card__title {
+    border-bottom: 1px solid #fff;
 }
-
-/* .quiz-card--blocked {
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.2);
-    background-image: url('./../../assets/img/icons8-lock.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.quiz-card__title--blocked {
-    display: none;
-} */
