@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { CardGrid, Group, Panel, PanelHeader, ScreenSpinner } from '@vkontakte/vkui';
 import { CategoryCard, Navigation, QuizCard } from '../../components';
 
+import { ReactComponent as Coin } from './../../assets/img/coin.svg'
+
 import './Home.css';
 
 const Home = ({ id }) => {
@@ -27,9 +29,13 @@ const Home = ({ id }) => {
 
 	return (
 		<Panel id={id}>
-			<PanelHeader fixed={false}>
-				<div style={{ color: "#fff" }}>
+			<PanelHeader
+				fixed={false}>
+				<div style={{ color: "#fff", display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
 					Категории
+					<div>
+						<Coin />
+					</div>
 				</div>
 			</PanelHeader>
 			<Group mode="plain">

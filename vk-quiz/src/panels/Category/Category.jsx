@@ -53,7 +53,7 @@ const Category = ({ panel }) => {
           </PanelHeaderButton>
         }
         before={<PanelHeaderBack color="#fff" />}>
-        <Title style={{ color: "#fff" }}>Категория : {quizes.category}</Title>
+        <Title style={{ color: "#fff" }}>{quizes.category}</Title>
       </PanelHeader>
       <div className='quiz-container'>
         <Group mode="plain">
