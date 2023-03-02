@@ -16,7 +16,7 @@ const Home = ({ id }) => {
 		};
 		setTimeout(() => {
 			fetchCategories();
-		}, 2000);
+		}, 1000);
 	}, []);
 
 	if (!categories) {
@@ -27,10 +27,11 @@ const Home = ({ id }) => {
 
 	return (
 		<Panel id={id}>
-			<PanelHeader >
-				<div style={{color: "#fff"}}>
+			<PanelHeader fixed={false}>
+				<div style={{ color: "#fff" }}>
 					Категории
-				</div></PanelHeader>
+				</div>
+			</PanelHeader>
 			<Group mode="plain">
 				<CardGrid size="l">
 					{categories.map((category, index) => (

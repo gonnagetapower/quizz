@@ -11,7 +11,7 @@ const Welcome = ({ id }) => {
   useEffect(() => {
     setTimeout(() => {
       //fetch data
-    }, 6000);
+    }, 1000);
   }, []);
 
   return (

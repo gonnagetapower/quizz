@@ -33,7 +33,7 @@ const Category = ({ panel }) => {
     };
     setTimeout(() => {
       fetchQuizes();
-    }, 2000);
+    }, 1000);
   }, []);
 
   if (quizes.length < 1) {
@@ -42,6 +42,7 @@ const Category = ({ panel }) => {
   return (
     <Panel id={panel}>
       <PanelHeader
+        fixed={false}
         left={
           <PanelHeaderButton
             aria-label="Back"

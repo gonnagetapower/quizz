@@ -70,12 +70,6 @@ const App = () => {
       });
   }, []);
 
-  console.log(data);
-
-  console.log('Platform', platform);
-  console.log('Appearance', appearance);
-  console.log('width', viewWidth);
-
   const modal = (
     <ModalRoot activeModal={location.getModalId()} onClose={() => router.popPage()}>
       <Terms id={MODAL_TERMS} />
