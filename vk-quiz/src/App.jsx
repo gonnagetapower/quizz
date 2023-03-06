@@ -58,7 +58,7 @@ const App = () => {
   const modal = (
     <ModalRoot activeModal={location.getModalId()} onClose={() => router.popPage()}>
       <Terms id={MODAL_TERMS} />
-      <Unavailable id={MODAL_UNAVAILABLE} content="" />
+      <Unavailable id={MODAL_UNAVAILABLE} content="привет" />
     </ModalRoot>
   );
 
@@ -66,7 +66,7 @@ const App = () => {
     <ConfigProvider>
       <AdaptivityProvider>
         <AppRoot scroll="global">
-        <div className='app'>
+          <div className='app'>
             <SplitLayout popout={popout} modal={modal}>
               <SplitCol>
                 <View
@@ -80,7 +80,7 @@ const App = () => {
                 </View>
               </SplitCol>
             </SplitLayout>
-            </div>
+          </div>
         </AppRoot>
       </AdaptivityProvider>
     </ConfigProvider>
