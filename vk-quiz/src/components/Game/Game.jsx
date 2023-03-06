@@ -1,3 +1,4 @@
+import { Tappable } from '@vkontakte/vkui';
 import React from 'react';
 
 import './Game.css';
@@ -16,12 +17,14 @@ const Game = ({ step, question, onClickVariant, questions }) => {
       <h1 className="game__title">{question.title}</h1>
       <ul className="game-list">
         {question.variants.map((text, index) => (
-          <li
-            className="game__question"
-            onClick={() => onClickVariant(index)}
-            key={index}>
-            <h2 className="game__answer">{text}</h2>
-          </li>
+          <Tappable>
+            <li
+              className="game__question"
+              onClick={() => onClickVariant(index)}
+              key={index}>
+              <h2 className="game__answer">{text}</h2>
+            </li>
+          </Tappable>
         ))}
       </ul>
     </div>

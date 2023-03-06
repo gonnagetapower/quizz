@@ -55,21 +55,6 @@ const App = () => {
 
   // Тема и платформа
 
-  useEffect(() => {
-    bridge
-      .send('VKWebAppInit')
-      .then((res) => {
-        if (res.result) {
-          console.log('Success', res);
-        } else {
-          console.log('Eroor');
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
   const modal = (
     <ModalRoot activeModal={location.getModalId()} onClose={() => router.popPage()}>
       <Terms id={MODAL_TERMS} />

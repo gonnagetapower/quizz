@@ -16,9 +16,7 @@ const Home = ({ id }) => {
 			const responseJson = await response.json();
 			setCategories(responseJson);
 		};
-		setTimeout(() => {
-			fetchCategories();
-		}, 1000);
+		fetchCategories();
 	}, []);
 
 	if (!categories) {
@@ -32,9 +30,10 @@ const Home = ({ id }) => {
 			<PanelHeader
 				fixed={false}>
 				<div style={{ color: "#fff", display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-					Категории
-					<div>
+					<h2>Категории</h2>
+					<div className='coin'>
 						<Coin />
+						<h2>5</h2>
 					</div>
 				</div>
 			</PanelHeader>

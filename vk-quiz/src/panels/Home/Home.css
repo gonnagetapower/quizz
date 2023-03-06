@@ -1,7 +1,12 @@
 .home-container {
-    display: grid;
     gap: 10px;
     padding: 10px;
+}
+
+.coin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (min-width: 800px) {

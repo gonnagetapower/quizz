@@ -13,6 +13,7 @@ import {
   PanelHeaderBack,
   Title,
   ScreenSpinner,
+  Tappable,
 } from '@vkontakte/vkui';
 import { Icon28ChevronBack } from '@vkontakte/icons';
 import { QuizCard } from '../../components';
@@ -31,9 +32,7 @@ const Category = ({ panel }) => {
       const responseJson = await response.json();
       setQuizes(responseJson[id]);
     };
-    setTimeout(() => {
-      fetchQuizes();
-    }, 1000);
+    fetchQuizes()
   }, []);
 
   if (quizes.length < 1) {
@@ -64,7 +63,9 @@ const Category = ({ panel }) => {
           ) : (
             <>
               {quizes.quizes.map((quiz, index) => (
-                <QuizCard bg={quizes.background} key={index} id={index} quiz={quiz[index + 1]} />
+                <Tappable>
+                  <QuizCard bg={quizes.background} key={index} id={index} quiz={quiz[index + 1]} />
+                </Tappable>
               ))}
             </>
           )}
