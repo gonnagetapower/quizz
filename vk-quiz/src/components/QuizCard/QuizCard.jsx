@@ -11,7 +11,7 @@ const QuizCard = ({ id, quiz, bg }) => {
   const router = useRouter();
   return (
     <Card mode="shadow" style={{ borderRadius: '30px' }}>
-      <Tappable>
+      <Tappable style={{ borderRadius: '28px' }}>
         {quiz.available ? (
           <div
             style={{ background: bg }}
