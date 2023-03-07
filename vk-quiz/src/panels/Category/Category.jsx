@@ -18,7 +18,7 @@ import {
 import { Icon28ChevronBack } from '@vkontakte/icons';
 import { QuizCard } from '../../components';
 
-import './Category.css'
+import './Category.css';
 
 const Category = ({ panel }) => {
   const router = useRouter();
@@ -32,7 +32,7 @@ const Category = ({ panel }) => {
       const responseJson = await response.json();
       setQuizes(responseJson[id]);
     };
-    fetchQuizes()
+    fetchQuizes();
   }, []);
 
   if (quizes.length < 1) {
@@ -52,9 +52,9 @@ const Category = ({ panel }) => {
           </PanelHeaderButton>
         }
         before={<PanelHeaderBack color="#fff" />}>
-        <Title style={{ color: "#fff" }}>{quizes.category}</Title>
+        <Title style={{ color: '#fff' }}>{quizes.category}</Title>
       </PanelHeader>
-      <div className='quiz-container'>
+      <div className="quiz-container">
         <Group mode="plain">
           {!quizes.quizes ? (
             <>
@@ -64,7 +64,12 @@ const Category = ({ panel }) => {
             <>
               {quizes.quizes.map((quiz, index) => (
                 <Tappable>
-                  <QuizCard bg={quizes.background} key={index} id={index} quiz={quiz[index + 1]} />
+                  <QuizCard
+                    bg={quizes.background}
+                    key={index}
+                    id={index}
+                    quiz={quiz[index]}
+                  />
                 </Tappable>
               ))}
             </>

@@ -24,3 +24,10 @@
     width: 35px;
     height: 35px;
 }
+
+.count {
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
