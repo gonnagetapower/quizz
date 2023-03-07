@@ -19,7 +19,7 @@ const Unavailable = ({ id, content }) => {
   return (
     <ModalCard id={id}>
       <div style={{ padding: '50px', display: 'flex', justifyContent: 'center' }}>
-        <Button title={content} />
+        <Button title={'Купить'} />
         {console.log(location)}
       </div>
     </ModalCard>
