@@ -8,7 +8,7 @@ class CaterogyController {
             return res.json(category)
         }
         else {
-            const category = await Category.find({})
+            const category = await Category.find({}).populate().where()
             return res.json(category)
         }
 

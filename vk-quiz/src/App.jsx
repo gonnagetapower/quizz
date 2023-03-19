@@ -53,6 +53,19 @@ const App = () => {
 
   const router = useRouter();
 
+  useEffect(() => {
+    bridge.send('VKWebAppGetLaunchParams')
+      .then((data) => {
+        if (data.vk_app_id) {
+          // Параметры запуска получены
+        }
+      })
+      .catch((error) => {
+        // Ошибка
+        console.log(error);
+      });
+  }, [])
+
   // Тема и платформа
 
   const modal = (

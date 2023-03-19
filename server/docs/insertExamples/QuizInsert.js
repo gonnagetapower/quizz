@@ -1,6 +1,6 @@
 db.quizzes.insertOne(
     {
-        category: "history",
+        category: "64085407a7658c7991d2fe35",
         game: {
             title: 'HISTORY TEST',
             available: true,
