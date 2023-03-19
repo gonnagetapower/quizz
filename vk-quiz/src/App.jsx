@@ -59,7 +59,7 @@ const App = () => {
     bridge.send('VKWebAppGetLaunchParams')
       .then((data) => {
         if (data.vk_app_id) {
-          axios.get('https://quizz-mxmc-git-master-gonnagetapower.vercel.app/api/user').then((data) => console.log(data))
+          http.get('https://quizz-mxmc-git-master-gonnagetapower.vercel.app/api/user').then((data) => console.log(data))
         }
       })
       .catch((error) => {
