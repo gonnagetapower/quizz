@@ -7,8 +7,9 @@ class UserController {
     //     return res.json()
     // }
     async getUsers(req, res) {
+        const headers = req.headers
         const users = {}
-        return res.json(users)
+        return res.json(headers)
     }
 }
 
