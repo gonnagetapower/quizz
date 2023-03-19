@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import bridge from '@vkontakte/vk-bridge';
+import axios from 'axios';
 
 import {
   AdaptivityProvider,
@@ -58,7 +59,7 @@ const App = () => {
     bridge.send('VKWebAppGetLaunchParams')
       .then((data) => {
         if (data.vk_app_id) {
-          http.get('')
+          axios.get('https://quizz-mxmc-git-master-gonnagetapower.vercel.app/api/user').then((data) => console.log(data))
         }
       })
       .catch((error) => {
