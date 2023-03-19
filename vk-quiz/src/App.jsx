@@ -58,7 +58,7 @@ const App = () => {
     bridge.send('VKWebAppGetLaunchParams')
       .then((data) => {
         if (data.vk_app_id) {
-          http.get('http://localhost:3000/api').then((data) => console.log(data))
+          http.get('')
         }
       })
       .catch((error) => {
