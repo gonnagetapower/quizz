@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const router = require('./routes/index')
 
 
-const url = 'mongodb://localhost:27017/Quiz'
+const url = 'mongodb+srv://gonnagetapower:naruto123@cluster0.aiivlyq.mongodb.net/quiz_vk?retryWrites=true&w=majority'
 const app = express()
 app.use(express.json())
 app.use('/api', router)

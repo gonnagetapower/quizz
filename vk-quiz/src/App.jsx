@@ -40,6 +40,7 @@ import { useLocation, useRouter } from '@happysanta/router';
 import Welcome from './panels/Welcome/Welcome';
 import Terms from './modals/Terms';
 import Unavailable from './modals/Unavailable/Unavailable';
+import http from './api';
 
 const App = () => {
   const platform = usePlatform();
@@ -57,7 +58,7 @@ const App = () => {
     bridge.send('VKWebAppGetLaunchParams')
       .then((data) => {
         if (data.vk_app_id) {
-          // Параметры запуска получены
+          http.get('http://localhost:3000/api').then((data) => console.log(data))
         }
       })
       .catch((error) => {
