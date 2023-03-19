@@ -17,7 +17,7 @@ class UserController {
     //     }
     // }
     async test(res, req) {
-        const user = await User.find({ category: category })
+        const user = await User.find()
         return res.json(user)
     }
 }
