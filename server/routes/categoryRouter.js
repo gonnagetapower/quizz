@@ -3,6 +3,7 @@ const router = new Router()
 
 const categoryController = require('../controllers/CategoryController')
 
-router.get('/', categoryController.getAll)
+router.get('/category', categoryController.getAll)
+router.post('/category', categoryController.create)
 
 module.exports = router;

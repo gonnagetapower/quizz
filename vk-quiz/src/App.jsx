@@ -55,18 +55,18 @@ const App = () => {
 
   const router = useRouter();
 
-  // useEffect(() => {
-  //   bridge.send('VKWebAppGetLaunchParams')
-  //     .then((data) => {
-  //       if (data.vk_app_id) {
-  //         http.get('https://quizz-mxmc-git-master-gonnagetapower.vercel.app/api/user').then((data) => console.log(data))
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       // Ошибка
-  //       console.log(error);
-  //     });
-  // }, [])
+  useEffect(() => {
+    bridge.send('VKWebAppGetLaunchParams')
+      .then((data) => {
+        if (data.vk_app_id) {
+          http.get('https://quizz-mxmc-git-master-gonnagetapower.vercel.app/api/user').then((data) => console.log(data))
+        }
+      })
+      .catch((error) => {
+        // Ошибка
+        console.log(error);
+      });
+  }, [])
 
   // Тема и платформа
 
