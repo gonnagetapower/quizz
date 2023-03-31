@@ -8,6 +8,6 @@ module.exports = function (req, res, next) {
         req.user = userData;
         next()
     } catch (e) {
-         res.json({message: e})
+         res.json({e})
     }
 }
